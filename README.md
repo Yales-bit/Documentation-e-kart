@@ -1,6 +1,6 @@
 # e-Kart — Référentiel Technique & Documentation
 
-Site de documentation technique, d'ingénierie système et journal de bord pour la conception et la fabrication d'un kart 100% électrique de compétition en open source.
+Site de documentation technique, d'ingénierie système et journal de bord pour la conception et la fabrication d'un kart 100% électrique en open source.
 
 ---
 
