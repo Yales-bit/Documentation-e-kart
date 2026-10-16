@@ -1,0 +1,254 @@
+# =============================================================================
+#  e-Kart — Documentation du projet de kart électrique
+#  Configuration MkDocs Material
+# =============================================================================
+
+# ── Métadonnées du site ──────────────────────────────────────────────────────
+site_name: e-Kart
+site_url: https://e-kart.github.io       # Remplacer par l'URL réelle
+site_description: >-
+  Documentation technique, journal de bord et portfolio du projet de
+  conception et fabrication d'un kart électrique de compétition.
+site_author: Équipe e-Kart
+copyright: >-
+  Copyright &copy; 2024 – 2026 Équipe e-Kart —
+  <a href="#__consent">Paramètres des cookies</a>
+
+# ── Dépôt Git ────────────────────────────────────────────────────────────────
+repo_url: https://github.com/e-kart/e-kart  # Remplacer par l'URL réelle
+repo_name: e-kart/e-kart
+edit_uri: edit/main/docs/
+exclude_docs: "includes/*"
+
+# ── Thème Material ───────────────────────────────────────────────────────────
+theme:
+  name: material
+  language: fr
+  custom_dir: overrides            # Dossier pour les surcharges de templates
+
+  # Palette claire / sombre avec bascule
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Passer au mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Passer au mode clair
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/go-kart
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/lightbulb
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/xmark
+      danger: fontawesome/solid/bolt
+      bug: fontawesome/solid/bug
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+
+  # Fonctionnalités du thème
+  features:
+    # Navigation
+    - navigation.tabs             # Onglets de navigation principaux (header)
+    - navigation.tabs.sticky      # Onglets restent visibles au scroll
+    - navigation.sections         # Titres de sections dans la sidebar
+    - navigation.indexes          # Les sections peuvent avoir une page index
+    - navigation.instant          # Chargement SPA (pas de rechargement complet)
+    - navigation.instant.prefetch # Pré-chargement au survol des liens
+    - navigation.instant.progress # Barre de progression de chargement
+    - navigation.tracking         # URL suit la position de scroll
+    - navigation.top              # Bouton "retour en haut"
+    - navigation.footer           # Navigation précédent/suivant en bas de page
+    # Table des matières
+    - toc.follow                  # TOC suit le scroll
+    # Recherche
+    - search.suggest              # Suggestions de recherche
+    - search.highlight            # Surlignage des termes trouvés
+    - search.share                # Bouton de partage de recherche
+    # Contenu
+    - content.code.copy           # Bouton copier sur les blocs de code
+    - content.code.annotate       # Annotations dans le code
+    - content.tabs.link           # Onglets de contenu liés entre pages
+    - content.tooltips            # Infobulles améliorées
+    # En-tête
+    - header.autohide             # En-tête se cache au scroll vers le bas
+    - announce.dismiss            # Bannière de notification fermable
+
+# ── Plugins ──────────────────────────────────────────────────────────────────
+plugins:
+  - search:
+      lang:
+        - fr
+        - en
+  - tags
+  # - blog:                       # Décommenter si plugin blog installé
+  #     blog_dir: journal/
+  #     post_date_format: long
+  #     post_url_format: "{date}/{slug}"
+  #     categories_allowed:
+  #       - Mécanique
+  #       - Électronique
+  #       - Batterie
+  #       - Essais
+  #       - Général
+  - minify:
+      minify_html: true
+
+# ── Extensions Markdown ─────────────────────────────────────────────────────
+markdown_extensions:
+  # Extensions standard
+  - abbr                          # Abréviations avec tooltip
+  - admonition                    # Boîtes d'avertissement / info
+  - attr_list                     # Attributs HTML sur éléments Markdown
+  - def_list                      # Listes de définitions
+  - footnotes                     # Notes de bas de page
+  - md_in_html                    # Markdown dans les blocs HTML
+  - tables                        # Tableaux
+  - toc:
+      permalink: true             # Liens ancres sur les titres
+      permalink_title: Lien vers cette section
+      toc_depth: 3
+
+  # Extensions PyMdown
+  - pymdownx.arithmatex:          # Formules LaTeX (MathJax)
+      generic: true
+  - pymdownx.betterem:            # Gras / italique amélioré
+      smart_enable: all
+  - pymdownx.caret               # Exposant (^texte^)
+  - pymdownx.mark                 # Surlignage (==texte==)
+  - pymdownx.tilde                # Barré / indice (~texte~)
+  - pymdownx.critic               # Marques de révision
+  - pymdownx.details              # Blocs dépliables (admonition)
+  - pymdownx.emoji:               # Émojis Material
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:           # Coloration syntaxique
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite         # Code en ligne coloré
+  - pymdownx.keys                 # Touches clavier (++ctrl+c++)
+  - pymdownx.smartsymbols         # Symboles typographiques
+  - pymdownx.snippets:            # Inclusion de fichiers
+      auto_append:
+        - docs/includes/abbreviations.md
+  - pymdownx.superfences:         # Blocs de code avancés + Mermaid
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:              # Onglets de contenu
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.tasklist:            # Listes de tâches avec cases à cocher
+      custom_checkbox: true
+
+# ── CSS & JS supplémentaires ────────────────────────────────────────────────
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+# ── Variables & liens sociaux ────────────────────────────────────────────────
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/e-kart
+      name: e-Kart sur GitHub
+    # - icon: fontawesome/brands/youtube
+    #   link: https://youtube.com/@e-kart
+    #   name: Chaîne YouTube
+  generator: false                 # Masque le "Made with Material for MkDocs"
+  status:
+    new: Nouveau
+    deprecated: Obsolète
+  # Consentement cookies (optionnel)
+  consent:
+    title: Consentement cookies
+    description: >-
+      Ce site utilise des cookies pour améliorer votre expérience de navigation
+      et pour mesurer l'audience. Vous pouvez modifier vos préférences
+      à tout moment.
+
+# ── Arborescence de navigation ───────────────────────────────────────────────
+nav:
+  - Accueil: index.md
+
+  - Le Projet:
+    - projet/index.md
+    - Genèse & Objectifs: projet/genese.md
+    - L'Équipe: projet/equipe.md
+    - Budget & Financement: projet/budget.md
+    - Planning: projet/planning.md
+
+  - Ingénierie:
+    - ingenierie/index.md
+    - Architecture Globale: ingenierie/architecture.md
+    - Châssis & Mécanique:
+      - ingenierie/chassis/index.md
+      - Géométrie & Dimensions: ingenierie/chassis/geometrie.md
+      - Matériaux & Structure: ingenierie/chassis/materiaux.md
+      - Suspension & Direction: ingenierie/chassis/suspension.md
+      - Freinage: ingenierie/chassis/freinage.md
+    - Groupe Motopropulseur:
+      - ingenierie/moteur/index.md
+      - Choix du Moteur: ingenierie/moteur/choix.md
+      - Transmission: ingenierie/moteur/transmission.md
+      - Contrôleur: ingenierie/moteur/controleur.md
+      - Performances: ingenierie/moteur/performances.md
+    - Batterie & Énergie:
+      - ingenierie/batterie/index.md
+      - Chimie & Cellules: ingenierie/batterie/cellules.md
+      - Architecture du Pack: ingenierie/batterie/pack.md
+      - BMS: ingenierie/batterie/bms.md
+      - Charge & Autonomie: ingenierie/batterie/charge.md
+    - Électronique & Embarqué:
+      - ingenierie/electronique/index.md
+      - Schéma Électrique Général: ingenierie/electronique/schema.md
+      - Tableau de Bord: ingenierie/electronique/dashboard.md
+      - Capteurs & Télémétrie: ingenierie/electronique/telemetrie.md
+      - Câblage & Connectique: ingenierie/electronique/cablage.md
+
+  - Fabrication:
+    - fabrication/index.md
+    - Du CAO au Réel: fabrication/cao-reel.md
+    - Processus de Fabrication: fabrication/processus.md
+    - Assemblage: fabrication/assemblage.md
+    - Sécurité & Homologation: fabrication/securite.md
+    - Essais & Validation: fabrication/essais.md
+
+  - Journal de Bord:
+    - journal/index.md
+    # Les articles de blog seront ajoutés ici chronologiquement
+    # Exemple :
+    # - "2024-01 — Lancement du projet": journal/posts/2024-01-lancement.md
+
+  - Médiathèque:
+    - mediatheque/index.md
+    - Galerie Photos: mediatheque/galerie.md
+    - Vidéos: mediatheque/videos.md
+    - Fichiers CAO: mediatheque/cao.md
+    - Schémas & Datasheets: mediatheque/schemas.md
+    - Téléchargements: mediatheque/telechargements.md
+
+  - Tags: tags.md

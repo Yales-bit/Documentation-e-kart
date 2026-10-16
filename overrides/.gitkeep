@@ -1,0 +1,3 @@
+{# Fichier de surcharge vide — nécessaire pour que custom_dir fonctionne #}
+{# Ajouter ici des surcharges de templates Jinja2 si nécessaire #}
+{# Exemple : surcharge du partial main.html pour un banner personnalisé #}

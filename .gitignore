@@ -1,0 +1,10 @@
+# e-Kart — Dépendances du projet
+env_git_kart/
+
+# Build du site
+site/
+
+# Fichiers système
+.DS_Store
+__pycache__/
+*.pyc
