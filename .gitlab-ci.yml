@@ -1,0 +1,23 @@
+image: python:3.12-slim
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+  key: mkdocs-material-$CI_COMMIT_WEEK_NUMBER
+
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  script:
+    - pip install -r requirements.txt
+    - mkdocs build --strict --site-dir public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "master"

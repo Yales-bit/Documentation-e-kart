@@ -18,9 +18,20 @@ F_{traction} = F_{roulement} + F_{aéro} + F_{pente} + F_{accélération}
 $$
 
 $$
-F_{traction} = C_{rr} \times m \times g + \frac{1}{2} \times \rho \times C_x \times A \times v^2 + m \times g \times \sin(\alpha) + m \times a
+F_{traction} = C_{rr} \, m \, g + \frac{1}{2} \, \rho \, C_x \, A \, v^2 + m \, g \, \sin(\alpha) + m \, a
 $$
 
+On négligera pour l'instant la force aérodynamique, la vitesse visée ($v$) et la surface projetée ($S$) n'étant pas très grandes. 
+
+De même, pour des essais, la piste ou la route seront plutôt plates et $\alpha \approx 0$. 
+
+Ainsi, les termes se s'annulent et l'équation devient : 
+
+$$
+
+F_{traction} = C_{rr} \, m \, g + m \, a = m \, (C_{rr} \, g + a)
+
+$$
 ## Courbe de performance
 
 <!-- TODO: Graphique vitesse vs temps, vitesse max en fonction du rapport de réduction -->

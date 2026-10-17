@@ -12,12 +12,12 @@ tags:
 
 | Critère | Importance | Commentaire |
 |:---|:---:|:---|
-| Puissance nominale | :material-star: :material-star: :material-star: | 3–10 kW selon le cahier des charges |
-| Couple à basse vitesse | :material-star: :material-star: :material-star: | Accélération et démarrage en côte |
-| Rendement | :material-star: :material-star: | Impact direct sur l'autonomie |
-| Masse | :material-star: :material-star: | Légèreté du véhicule |
+| Puissance nominale | :material-star: :material-star: :material-star: | 2–5 kW |
+| Couple à basse vitesse | :material-star: :material-star: | Accélération et démarrage en côte |
 | Coût | :material-star: :material-star: | Budget limité |
-| Disponibilité | :material-star: | Approvisionnement et délais |
+| Disponibilité | :material-star:  :material-star:  :material-star:| Approvisionnement et délais |
+| Rendement | :material-star: | Impact direct sur l'autonomie |
+| Masse |  :material-star: | Légèreté du véhicule |
 
 ## Comparatif des technologies
 

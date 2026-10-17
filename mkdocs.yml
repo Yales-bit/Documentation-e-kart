@@ -5,18 +5,18 @@
 
 # ── Métadonnées du site ──────────────────────────────────────────────────────
 site_name: e-Kart
-site_url: https://e-kart.github.io       # Remplacer par l'URL réelle
+site_url: https://yales-bit.github.io/Documentation-e-kart/      # Remplacer par l'URL réelle
 site_description: >-
   Documentation technique, journal de bord et portfolio du projet de
   conception et fabrication d'un kart électrique de compétition.
 site_author: Équipe e-Kart
 copyright: >-
-  Copyright &copy; 2024 – 2026 Équipe e-Kart —
+  Copyright &copy; 2025 – 2026 Équipe e-Kart —
   <a href="#__consent">Paramètres des cookies</a>
 
 # ── Dépôt Git ────────────────────────────────────────────────────────────────
-repo_url: https://github.com/e-kart/e-kart  # Remplacer par l'URL réelle
-repo_name: e-kart/e-kart
+repo_url: https://github.com/Yales-bit/Documentation-e-kart  # Remplacer par l'URL réelle
+repo_name: Yales-bit/Documentation-e-kart
 edit_uri: edit/main/docs/
 exclude_docs: "includes/*"
 

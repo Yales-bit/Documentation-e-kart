@@ -13,7 +13,7 @@ hide:
 
 # e-Kart
 
-**Concevoir, dimensionner et fabriquer un kart 100% électrique de compétition.**
+**Concevoir, dimensionner et fabriquer un kart 100% électrique.**
 
 Référentiel technique intégral, calculs d'ingénierie, dossiers de fabrication et suivi de projet, de l'étude de faisabilité aux essais sur piste.
 

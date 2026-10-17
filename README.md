@@ -6,14 +6,14 @@ Site de documentation technique, d'ingénierie système et journal de bord pour 
 
 ## 1. Présentation & But du Projet
 
-Le projet **e-Kart** a pour objectif la conception intégrale, le dimensionnement, la fabrication et la validation sur piste d'un véhicule monoplace électrique de compétition.
+Le projet **e-Kart** a pour objectif la conception intégrale, le dimensionnement, la fabrication et la validation sur piste d'un véhicule monoplace électrique.
 
 Ce dépôt héberge l'intégralité du site de documentation technique propulsé par [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). Il sert de référentiel central pour :
 
-- **L'ingénierie par sous-systèmes** : notes de calcul, bilans de puissance, dimensionnement structural (FEA), études électrochimiques et schémas unifilaires.
-- **Les dossiers de méthodes et de fabrication** : tolérancement (ISO 2768-mK), gammes d'assemblage mécano-soudé, couples de serrage et protocoles d'habilitation / sécurité haute tension.
-- **Le suivi de projet et journal de bord** : revues de conception (SRR, PDR, CDR), planning directeur (Gantt) et capitalisation chronologique des essais.
-- **La médiathèque et données ouvertes** : distribution sous licences libres des modèles CAO 3D (STEP), plans de découpe 2D (DXF), schémas de PCB (Gerber) et firmwares embarqués.
+- **L'ingénierie par sous-systèmes** : choix techniques, calculs de dimensionnement, intégration, schémas
+- **Les dossiers de méthodes et de fabrication** 
+- **Le suivi de projet et journal de bord** : revues de conception, planning directeur (Gantt).
+- **La médiathèque et données ouvertes** : distribution sous licences libres des modèles CAO 3D (STEP), plans de découpe 2D (DXF), schémas de PCB (Gerber) et des codes embarqués.
 
 ---
 
