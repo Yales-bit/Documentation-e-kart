@@ -42,7 +42,7 @@ Par mesure de sécurité, le boîtier doit être totalement isolé électriqueme
 
 Pour maintenir les cellules solidaires entre elles, assurer leur espacement et les disposer selon la géométrie souhaitée, des entretoises (*spacers*) sont utilisées.
 
-Une première version a été modélisée, mais présentait plusieurs inconvénients : ses dimensions importantes rendaient l'impression 3D délicate et sa structure monobloc imposait un maillage fixe (lignes × colonnes), interdisant toute modification d'agencement sans réimpression complète (voir Figure 1).
+Une première version a été modélisé, elle présentait cependant plusieurs inconvénients. Sa taille l'empêchait d'être imprimé facilement, et sa conception rendait les dimensions (lignes x colonnes) fixes. Ainsi il n'est pas possible faire une autre disposition sans avoir à reimprimer les spacers. 
 
 <figure markdown="span">
   ![CAO de la 1ère version du Spacer](../../assets/images/batterie/SpacerV1.png){ width="100%" }

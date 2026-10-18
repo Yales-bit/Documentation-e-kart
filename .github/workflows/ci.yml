@@ -47,5 +47,5 @@ jobs:
 
       - name: Push mirror to GitLab
         run: |
-          git remote add gitlab https://gitlab-ci-token:${{ secrets.GITLAB_TOKEN }}@git.unistra.fr/insas-miq/insas-miq3-ps6/e-kart.git
+          git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@git.unistra.fr/insas-miq/insas-miq3-ps6/e-kart.git
           git push gitlab --mirror
