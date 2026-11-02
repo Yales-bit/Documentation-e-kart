@@ -67,7 +67,7 @@ flowchart TB
 | Supervision batterie | BMS $\to$ MCU | Communication | Bus CAN 2.0B à $500 \text{ kbps}$ (tensions cellules, SoC, SoH, $T^\circ$) |
 | Commande moteur | MCU $\to$ ESC | Commande | Signal analogique redondant ($0 - 5 \text{ V}$) ou trame CAN périodique ($50 \text{ Hz}$) |
 | Retour d'état moteur | ESC $\to$ MCU | Diagnostic | Température bobinage, courant efficace, vitesse de rotation RPM |
-| Consigne pilote | Pédale d'accélérateur $\to$ MCU | Capteur | Double capteur à effet Hall indépendant (sécurité anti-patinage) |
+| Consigne pilote | Pédale d'accélérateur $\to$ MCU | Capteur | Potentiomètre rotatif $10\text{ k}\Omega$ coaxial direct ($0 - 3{,}3\text{ V}$, sécurité fail-safe) |
 | Bus d'instrumentation | Capteurs $\to$ MCU | Mesure | Bus I2C / SPI / Entrées analogiques 12 bits |
 | Lien de télémétrie | MCU $\to$ Poste Stand | Sans fil | Émetteur WiFi / LoRa $868 \text{ MHz}$ pour analyse à distance |
 

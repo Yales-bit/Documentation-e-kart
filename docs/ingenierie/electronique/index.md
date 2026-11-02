@@ -54,9 +54,10 @@ L'électronique embarquée constitue le système nerveux du kart électrique. El
 
 | Sous-ensemble électronique | Matériel / Contrôleur | Protocole / Interface | Rôle fonctionnel |
 |:---|:---|:---:|:---|
-| **Calculateur Principal (MCU)** | ESP32-S3 / STM32F405 | Bus CAN 2.0B / SPI | Gestion centrale, cartographie pédale, boucle de sécurité |
-| **Onduleur Moteur (ESC)** | Variateur FOC programmable | Bus CAN / PWM $20 \text{ kHz}$ | Commande des phases statoriques du moteur synchrone |
-| **Carte BMS** | BMS intelligent 16S | Bus CAN / UART | Surveillance tension/température de chaque élément de batterie |
-| **Tableau de Bord (Dash)** | Écran TFT couleur $3{,}5''$ SPI | SPI / I2C | Affichage vitesse instantanée, état de charge (SoC), alarmes |
-| **Alimentation Auxiliaire** | Convertisseur DC-DC isolé | $48 \text{ V} \to 12 \text{ V} / 5 \text{ V}$ | Alimentation découplée du MCU, des capteurs et de l'éclairage |
-| **Module Télémétrie** | Transmetteur WiFi / LoRa | UART / SPI | Envoi des trames de données à fréquence d'échantillonnage de $20 \text{ Hz}$ |
+| **Carte Avant (Cockpit)** | Microcontrôleur ESP32 | Bus CAN 2.0B (GPIO 6 & 7) / SPI / ADC | Acquisition potentiomètre pédale, écran TFT couleur, lecteur SD, boutons |
+| **Carte Arrière (Puissance)** | Microcontrôleur ESP32 | Bus CAN 2.0B (GPIO 6 & 7) / I2C / PWM | Pilotage MOSFETs CMS, boucle d'arrêt d'urgence, capteurs IMU et température |
+| **Carte Distribution Puissance** | Hacheurs abaisseurs LM2576HV CMS | Lignes continues régulées ($12\text{ V}$, $6\text{ V}$) | Conversion abaisseuse depuis bus 48V, mesure globale de courant ($R_{\text{th}} = 32\text{ °C/W}$) |
+| **Carte Signalisation Arrière** | PCB satellite CMS déporté | Commande 6V commutée par MOSFET | Feux stop et clignotants à double branche redondante équilibrée |
+| **Onduleur Moteur (ESC)** | Variateur FOC programmable | PWM $20 \text{ kHz}$ / Bus CAN | Commande triphasée du moteur synchrone 3-4 kW |
+| **Système Batterie (BMS)** | BMS intelligent 14S | Bus CAN / NTC | Protection surtension, sous-tension et équilibrage des 52 cellules |
+

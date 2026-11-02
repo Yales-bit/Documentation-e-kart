@@ -76,43 +76,70 @@ L'agencement en 3D de l'assemblage complet des cellules au sein des spacers V2 e
   <figcaption>Figure 4 — Modèle CAO de l'assemblage des 52 cellules avec les spacers V2.</figcaption>
 </figure>
 
-### Boîtier
+### Boîtier Métallique et Étanchéité IP54
 
-Le boîtier remplit plusieurs fonctions essentielles : il protège la batterie contre les chocs mécaniques, la poussière, les éclaboussures et les éventuels débris de piste. Il garantit également la sécurité des utilisateurs en isolant électriquement les cellules de l'environnement extérieur.
+Le boîtier loge et protège le pack de 52 cellules d'accumulateurs. Sa conception répond à un cahier des charges strict articulé autour de quatre exigences directrices :
 
-La conception s'est orientée vers un boîtier en tôle d'acier pliée puis soudée. Des ouvertures sont aménagées dans la longueur afin de pouvoir loger un ventilateur et une grille d'aération.
+1. **Protection environnementale IP54** : Barrière hermétique contre les poussières et les projections d'eau directes en conditions extérieures.
+2. **Fabricabilité en atelier sans déformation thermique** : Mise en œuvre de procédés maîtrisés par les techniciens d'atelier (validation conjointe avec M. Schalck).
+3. **Démontabilité et maintenabilité rapide** : Accès intégral au pack d'accumulateurs en quelques minutes sans outillage spécialisé.
+4. **Dissipation thermique** : Évacuation continue des calories dissipées pour préserver la durée de vie électrochimique des cellules.
 
-La fixation du couvercle a nécessité une attention particulière : il fallait qu'il soit solidement fixé, facilement démontable et qu'il assure une étanchéité satisfaisante. La solution retenue consiste à créer des rebords périphériques afin d'offrir un appui-plan continu sur lequel le couvercle vient reposer. Des barres en acier plein sont vissées sur les bords avec des vis à tête fraisée pour ne créer aucune surépaisseur, puis des trous taraudés permettent de fixer le couvercle démontable.
+#### Conception Mécano-Pliée et Soudabilité
 
-La soudure avait été initialement envisagée pour ces barres, mais pour éviter toute déformation thermique de la tôle fine sur les bords et pour garantir un plan de joint parfaitement plat sans surépaisseur de cordon, la fixation mécanique vissée a été privilégiée.
+Le caisson est fabriqué à partir de tôle d'acier découpée puis pliée avant soudage. Afin de prévenir tout vrillage ou gauchissement thermique de la tôle fine qui détruirait la planéité du plan de joint, **les opérations de pliage ont été maximisées pour remplacer les cordons de soudure continus**. Les quelques soudures résiduelles sont strictement localisées et discontinues pour minimiser l'énergie de soudage apportée.
 
-La fixation au châssis est assurée par des pattes en tôle d'acier pliée. Elles sont positionnées et maintenues par des vis temporaires, puis soudées au boîtier. Les vis sont ensuite retirées pour qu'aucune saillie ne dépasse à l'intérieur du compartiment batterie.
+#### Interface Boîtier / Couvercle et Rebords d'Étanchéité
+
+Pour garantir la compression uniforme d'un joint d'étanchéité périphérique (joint élastomère silicone ou caoutchouc) et satisfaire l'indice **IP54**, la planéité du plan de joint est déterminante :
+
+* **Rebords d'appui rigides en tube plein** : Les portées d'étanchéité sont réalisées avec des barres en tube carré d'acier plein de **$8 \times 8 \text{ mm}$**. Ces barres apportent une assise indéformable sur tout le pourtour supérieur du caisson.
+* **Choix du vissage plutôt que du soudage** : L'inertie thermique des barres pleines de $8 \text{ mm}$ est considérablement plus forte que celle de la tôle pliée. Un soudage direct provoquerait un retrait différentiel important au refroidissement, déformant irréversiblement les flancs du caisson. Les rebords sont donc **vissés au boîtier par vis à tête fraisée**, assurant une planéité rigoureuse tout en restant remplaçables en cas de dégradation.
+* **Fixation et démontabilité du couvercle** : Le couvercle supérieur est fixé par **4 à 6 vis M4** taraudées directement dans la matière pleine des rebords de $8 \text{ mm}$. Ce taraudage en acier massif garantit un couple de serrage et une résistance à l'arrachement impossibles à obtenir dans de la tôle fine, tout en autorisant une dépose complète en moins de 3 minutes.
+
+#### Fixation au Châssis en Deux Temps (Sécurité Électrique)
+
+Le caisson est ancré aux longerons tubulaires du châssis par **4 pattes en tôle d'acier pliée**. L'intégration s'effectue selon une procédure rigoureuse en deux étapes :
+
+1. **Positionnement et calage géométrique par vissage** : Les pattes sont pré-assemblées par vissage pour ajuster précisément l'assiette du boîtier, le centrage des masses et les jeux avec la colonne de direction et le baquet.
+2. **Soudage définitif sur châssis** : Une fois la géométrie validée, les pattes sont pointées puis soudées à l'arc/TIG sur les tubes du châssis.
+3. **Retrait impératif des vis de pointage** : Les vis de positionnement sont systématiquement dévissées et retirées. Ce choix découle d'un impératif absolu de **sécurité électrique** : des tiges filetées en saillie à l'intérieur du caisson présenteraient un risque critique de frottement, d'abrasion de la gaine isolante et de court-circuit direct avec les pôles des cellules.
+
+<div class="grid" markdown>
 
 <figure markdown="span">
-  ![Vue éclatée du pack batterie](../../assets/images/batterie/exploded_pack.png){ width="100%" }
-  <figcaption>Figure 5 — Vue éclatée de l'ensemble du pack batterie (cellules, boîtier, couvercle et fixations).</figcaption>
+  ![Plan de définition de la patte de fixation](../../assets/images/batterie/Dessin_patte.png)
+  <figcaption>Figure 5 — Dessin de définition 2D de la patte de fixation du boîtier (tôle d'acier pliée).</figcaption>
 </figure>
+
+<figure markdown="span">
+  ![Vue éclatée du pack batterie](../../assets/images/batterie/exploded_pack.png)
+  <figcaption>Figure 6 — Vue éclatée de l'ensemble du pack batterie (cellules, boîtier, couvercle et fixations).</figcaption>
+</figure>
+
+</div>
 
 <figure markdown="span">
   ![Plan d'ensemble du pack batterie](../../assets/images/batterie/ass_pack_dessin.png){ width="100%" }
-  <figcaption>Figure 6 — Plan d'ensemble coté de l'assemblage du pack batterie.</figcaption>
+  <figcaption>Figure 7 — Plan d'ensemble coté de l'assemblage complet du pack batterie et de son caisson.</figcaption>
 </figure>
 
-### Isolation électrique
+### Isolation Électrique Interne
 
 L'isolation électrique est une barrière de sécurité indispensable pour éviter tout court-circuit interne ou mise à la masse du châssis :
 
 * **Anneaux en papier d'orge (*barley paper* / *fishpaper*)** : Chaque cellule 21700 reçoit une rondelle adhésive isolante en papier d'orge au niveau de sa borne positive. Comme le corps métallique entier de la cellule est relié au pôle négatif sous la fine gaine thermorétractable, ces rondelles garantissent qu'aucun contact accidentel ne puisse se produire entre la bande de nickel soudée et l'épaulement négatif, même sous fortes vibrations ou contraintes mécaniques.
 * **Isolation des bandes de nickel** : Des bandes de papier d'orge autocollant et du ruban isolant haute température (Kapton) sont appliqués au-dessus des bandes de nickel et entre les liaisons série adjacentes. Cela prévient tout contact électrique involontaire entre potentiels différents.
-* **Enveloppe globale et découplage mécanique** : Le bloc de cellules assemblé est recouvert d'une gaine thermorétractable en PVC, puis séparé des parois internes du boîtier en acier par des plaques isolantes en fibre et de la mousse d'amortissement dense pour absorber les chocs.
+* **Enveloppe globale et découplage mécanique** : Il reste encore à déterminer si le bloc de cellules assemblé sera recouvert d'une gaine thermorétractable en PVC. Cela réduirait évidemment les risques de court-circuit mais compliquera l'évacuation de la chaleur. Les cellules ont déjà une enveloppe et seront éloignées du boîtier. Il faudra donc voir quel est le plus grand risque en le thermique et l'électrique.
+Le pack est séparé des parois internes du boîtier en acier par des cales imprimées en TPU aux quatres coins et de la mousse d'amortissement dense pour absorber les chocs.
 
-### Gestion thermique
+### Gestion Thermique et Refroidissement Convectif
 
-L'un des facteurs limitants de la batterie est sa capacité à évacuer la chaleur pour ne pas provoquer un bridage de puissance, voire un arrêt d'urgence préventif contre l'emballement thermique.
+Le dimensionnement thermique du pack a fait l'objet d'une modélisation multiphysique sous Simulink / Simscape :
 
-Le besoin d'évacuer la chaleur se heurte à la contrainte prioritaire de l'isolation électrique : celle-ci confine le pack et empêche l'air de circuler directement entre les cellules. La ventilation (active ou passive) agit donc principalement en évacuant les calories dissipées dans le volume d'air périphérique du boîtier.
-
-Néanmoins, un ventilateur d'extraction est installé sur le flanc du boîtier pour renouveler l'air chaud. Cette régulation active est asservie aux mesures acquises en temps réel par les sondes de température implantées au cœur des cellules et reliées au BMS.
+* **Comportement thermique validé** : Lors d'un roulage continu de plus de $1\,000\text{ s}$ sous un débit nominal de $42\text{ A}$, la température du pack s'élève de $20^\circ\text{C}$ pour se stabiliser entre $37^\circ\text{C}$ et $38^\circ\text{C}$ (et $45^\circ\text{C}$ en continu ininterrompu), restant très éloignée de la zone critique ($80^\circ\text{C}$) ou de la zone de coupure ($65^\circ\text{C}$).
+* **Ventilation active redondante** : Bien que la convection naturelle et l'inertie du pack suffisent à éviter tout emballement thermique, le boîtier intègre un emplacement usiné pour un **ventilateur axial à extraction forcée** et une grille d'aération périphérique filtrée, garantissant un balayage d'air permanent et une sécurité en plus contre l'emballement thermique.
 
 !!! note "Ressources CAO et plans détaillés"
     Pour consulter et télécharger l'ensemble des plans de définition et modèles 3D (boîtier, couvercle, pattes de fixation, spacers), rendez-vous dans la [Médiathèque CAO](../../mediatheque/cao.md) et la section [Schémas & Datasheets](../../mediatheque/schemas.md).
+

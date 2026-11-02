@@ -101,7 +101,7 @@ graph LR
     HTML --> CSS
 ```
 
-- **MkDocs & Material for MkDocs** : Solution éprouvée pour les documentations scientifiques et techniques industrielles. Génération 100% statique (sécurité absolue, hébergement gratuit sur GitHub Pages ou GitLab Pages), moteur de recherche full-text local et mode sombre dynamique basé sur les préférences de l'OS.
+- **MkDocs & Material for MkDocs** : Solution éprouvée pour les documentations scientifiques et techniques industrielles. Génération 100% statique (sécurité absolue, hébergement gratuit sur GitHub Pages), moteur de recherche full-text local et mode sombre dynamique basé sur les préférences de l'OS.
 - **PyMdown Extensions** :
   - `arithmatex` : Support des équations différentielles et calculs RDM en LaTeX via MathJax 3.
   - `superfences` : Intégration native des diagrammes Mermaid (Gantt, flowcharts, diagrammes de Sankey).
@@ -301,7 +301,7 @@ Pour préserver une interface d'un niveau esthétique optimal, toujours employer
 
 ---
 
-### 3.5. Automatisation du Déploiement (GitHub Pages / GitLab Pages)
+### 3.5. Automatisation du Déploiement (GitHub Pages)
 
 Pour publier automatiquement le site à chaque `git push` sur la branche principale :
 
