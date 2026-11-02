@@ -1,0 +1,572 @@
+/* ==========================================================================
+   e-Kart — Styles personnalisés
+   Surcharge et extension du thème Material for MkDocs
+   ========================================================================== */
+
+/* ── Variables de design ─────────────────────────────────────────────────── */
+:root {
+  /* Couleurs de marque */
+  --ekart-primary:     #7C3AED;   /* Violet profond */
+  --ekart-primary-rgb: 124, 58, 237;
+  --ekart-accent:      #F59E0B;   /* Ambre doré */
+  --ekart-accent-rgb:  245, 158, 11;
+  --ekart-surface:     #F8FAFC;
+  --ekart-surface-alt: #F1F5F9;
+
+  /* Gradients */
+  --ekart-gradient: linear-gradient(135deg, #7C3AED 0%, #4F46E5 50%, #2563EB 100%);
+  --ekart-gradient-warm: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+
+  /* Typographie */
+  --ekart-font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ekart-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Ombres */
+  --ekart-shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --ekart-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --ekart-shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --ekart-shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+
+  /* Arrondis */
+  --ekart-radius-sm: 6px;
+  --ekart-radius-md: 10px;
+  --ekart-radius-lg: 16px;
+  --ekart-radius-xl: 24px;
+
+  /* Transitions */
+  --ekart-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark mode overrides */
+[data-md-color-scheme="slate"] {
+  --ekart-surface:     #1E293B;
+  --ekart-surface-alt: #0F172A;
+}
+
+
+/* ── Landing Page — Hero Section ─────────────────────────────────────────── */
+.ekart-hero {
+  position: relative;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--ekart-gradient);
+  border-radius: var(--ekart-radius-xl);
+  margin: 0 0 2.5rem 0;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.ekart-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(245,158,11,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(96,165,250,0.18) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ekart-hero h1 {
+  color: #ffffff !important;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.ekart-hero p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.ekart-hero .ekart-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 100px;
+  padding: 0.35rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+
+/* ── Boutons CTA ─────────────────────────────────────────────────────────── */
+.ekart-cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.ekart-cta-group p {
+  margin: 0 !important;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ekart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--ekart-radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all var(--ekart-transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ekart-btn-primary {
+  background: #ffffff;
+  color: var(--ekart-primary) !important;
+  box-shadow: var(--ekart-shadow-md);
+}
+
+.ekart-btn-primary:hover,
+.ekart-btn-primary:focus {
+  transform: translateY(-2px);
+  box-shadow: var(--ekart-shadow-lg);
+  color: var(--ekart-primary) !important;
+  background: #f8fafc;
+}
+
+.ekart-btn-outline {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+.ekart-btn-outline:hover,
+.ekart-btn-outline:focus {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.85);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+
+/* ── Feature Cards (Grille d'accueil) ────────────────────────────────────── */
+.ekart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.ekart-card {
+  position: relative;
+  padding: 1.75rem;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--ekart-radius-lg);
+  transition: all var(--ekart-transition);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+.ekart-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ekart-gradient);
+  opacity: 0;
+  transition: opacity var(--ekart-transition);
+}
+
+.ekart-card:hover {
+  border-color: rgba(var(--ekart-primary-rgb), 0.3);
+  box-shadow: var(--ekart-shadow-lg);
+  transform: translateY(-4px);
+}
+
+.ekart-card:hover::before {
+  opacity: 1;
+}
+
+.ekart-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--ekart-radius-md);
+  background: rgba(var(--ekart-primary-rgb), 0.08);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+[data-md-color-scheme="slate"] .ekart-card-icon {
+  background: rgba(var(--ekart-primary-rgb), 0.2);
+}
+
+.ekart-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.ekart-card p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+/* ── Stats Bar ───────────────────────────────────────────────────────────── */
+.ekart-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem 1rem;
+  flex-wrap: wrap;
+}
+
+.ekart-stat {
+  text-align: center;
+}
+
+.ekart-stat-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--ekart-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ekart-stat-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+  margin-top: 0.25rem;
+}
+
+
+/* ── Section Titles ──────────────────────────────────────────────────────── */
+.ekart-section-title {
+  text-align: center;
+  margin: 3rem 0 1.5rem;
+}
+
+.ekart-section-title h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.ekart-section-title p {
+  max-width: 500px;
+  margin: 0.5rem auto 0;
+  opacity: 0.65;
+  font-size: 0.95rem;
+}
+
+
+/* ── Tech Spec Table ─────────────────────────────────────────────────────── */
+.ekart-spec-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--ekart-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  margin: 1.5rem 0;
+}
+
+.ekart-spec-table th {
+  background: rgba(var(--ekart-primary-rgb), 0.06);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.ekart-spec-table td {
+  padding: 0.65rem 1rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  font-size: 0.9rem;
+}
+
+.ekart-spec-table tr:hover td {
+  background: rgba(var(--ekart-primary-rgb), 0.03);
+}
+
+
+/* ── Timeline (Journal de bord) ──────────────────────────────────────────── */
+.ekart-timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin: 2rem 0;
+}
+
+.ekart-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--ekart-gradient);
+  border-radius: 1px;
+}
+
+.ekart-timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.ekart-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0.35rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ekart-primary);
+  border: 3px solid var(--md-default-bg-color);
+  box-shadow: 0 0 0 2px var(--ekart-primary);
+  transform: translateX(-5px);
+}
+
+.ekart-timeline-date {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ekart-primary);
+  margin-bottom: 0.25rem;
+}
+
+.ekart-timeline-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.ekart-timeline-item p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin: 0;
+}
+
+
+/* ── Status Badges ───────────────────────────────────────────────────────── */
+.ekart-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ekart-status--done {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+}
+
+.ekart-status--wip {
+  background: rgba(245, 158, 11, 0.1);
+  color: #F59E0B;
+}
+
+.ekart-status--todo {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94A3B8;
+}
+
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ekart-hero {
+    padding: 2.5rem 1.25rem;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .ekart-stats {
+    gap: 1.5rem;
+  }
+
+  .ekart-stat-value {
+    font-size: 1.5rem;
+  }
+
+  .ekart-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+
+/* ── Material Grid Cards Enhancement ───────────────────────────────────── */
+.md-typeset .grid.cards > ul > li {
+  position: relative;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--ekart-radius-lg);
+  padding: 1.5rem;
+  background: var(--md-default-bg-color);
+  transition: all var(--ekart-transition);
+  overflow: hidden;
+}
+
+.md-typeset .grid.cards > ul > li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ekart-gradient);
+  opacity: 0;
+  transition: opacity var(--ekart-transition);
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: rgba(var(--ekart-primary-rgb), 0.35);
+  box-shadow: var(--ekart-shadow-lg);
+  transform: translateY(-3px);
+}
+
+.md-typeset .grid.cards > ul > li:hover::before {
+  opacity: 1;
+}
+
+.md-typeset .grid.cards > ul > li hr {
+  margin: 0.75rem 0 1rem;
+  opacity: 0.2;
+}
+
+.md-typeset .grid.cards .twemoji.lg {
+  font-size: 1.6rem;
+  color: var(--ekart-primary);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards .twemoji.lg {
+  color: #a78bfa;
+}
+
+
+/* ── Telemetry / Progress Bar ─────────────────────────────────────────── */
+.ekart-progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 140px;
+  vertical-align: middle;
+}
+
+.ekart-progress-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(var(--ekart-primary-rgb), 0.12);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+[data-md-color-scheme="slate"] .ekart-progress-track {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.ekart-progress-fill {
+  height: 100%;
+  background: var(--ekart-gradient);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.ekart-progress-val {
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--ekart-font-mono);
+  color: var(--md-default-fg-color);
+  min-width: 34px;
+  text-align: right;
+}
+
+
+/* ── Formules mathématiques (MathJax) ─────────────────────────────────── */
+.arithmatex {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+div.arithmatex {
+  padding: 0.8rem 1.2rem;
+  margin: 1.2rem 0;
+  background: rgba(var(--ekart-primary-rgb), 0.03);
+  border-left: 3px solid var(--ekart-primary);
+  border-radius: 0 var(--ekart-radius-md) var(--ekart-radius-md) 0;
+}
+
+[data-md-color-scheme="slate"] div.arithmatex {
+  background: rgba(var(--ekart-primary-rgb), 0.08);
+  border-left-color: #a78bfa;
+}
+
+
+/* ── Admonition customisation ────────────────────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: var(--ekart-radius-md);
+  box-shadow: var(--ekart-shadow-sm);
+}
+
+/* ── Code blocks ─────────────────────────────────────────────────────────── */
+.md-typeset pre > code {
+  border-radius: var(--ekart-radius-md);
+}
+
+/* ── Image styling ───────────────────────────────────────────────────────── */
+.md-typeset img {
+  border-radius: var(--ekart-radius-md);
+  box-shadow: var(--ekart-shadow-md);
+}
+
+/* ── Navigation tabs override ────────────────────────────────────────────── */
+.md-tabs__link {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+/* ── Smooth scroll ───────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
